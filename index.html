@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="canonical" href="https://inkwellhub.com/" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Import Metadata and Footer using JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Load metadata.html and insert its content into the <head> section
+        $.get("metadata.html", function (data) {
+          $("head").append(data);
+        });
+      });
+      $(document).ready(function () {
+        // Load footer.html and insert its content into the <footer> section
+        $.get("footer.html", function (data) {
+          $("#imported-footer").html(data);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <h1>We are coming soon</h1>
+      <p>
+        Project base:
+        <a href="https://www.democracylab.org/projects/1290" target="_blank"
+          >DemocracyLab</a
+        >
+      </p>
+    </div>
+    <footer id="imported-footer"></footer>
+  </body>
+</html>
